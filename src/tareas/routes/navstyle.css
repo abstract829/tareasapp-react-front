@@ -1,0 +1,11 @@
+.ul-tarea_nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.li-tarea_nav{
+    margin-right: 15px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
+}

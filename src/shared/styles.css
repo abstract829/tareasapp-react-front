@@ -1,0 +1,28 @@
+.sidenav{
+    height: 100vh;
+    width: 250px;
+    border-right: 0.5px solid black;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.routes{
+    margin-top:30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+li{
+    list-style: none;
+}
+footer{
+    border-top: 0.5px solid black;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 15px;
+    font-size: 14px;
+}
