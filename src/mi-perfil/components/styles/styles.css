@@ -1,0 +1,32 @@
+.error-msg{
+    display: block;
+    color: red;
+    font-size: small;
+    font-weight: 500;
+}
+input{
+    display: block;
+}
+label{
+    margin-top: 10px;
+}
+button{
+    margin-top: 20px;
+}
+.perfil-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+}
+.datos-container{
+    grid-column: 2/3;
+    border: 0.5px solid grey;
+    padding: 15px;
+    border-radius: 3px;
+}
+.form-container{
+    border: 0.5px solid grey;
+    padding: 15px;
+    border-radius: 3px;
+    grid-column: 3/4;
+}

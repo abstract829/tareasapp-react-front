@@ -1,6 +1,7 @@
 import { TareasCompleted } from '../pages/TareasCompleted';
 import { TareasPending } from '../pages/TareasPending';
 import { TareasNoAsign } from '../pages/TareasNoAsign';
+import { AgregarTarea } from '../pages/AgregarTarea';
 
 interface Route{
     to: string,
@@ -27,5 +28,11 @@ export const routes :Route[] = [
         path:'/pending',
         Component: TareasPending,
         name:'Tareas pendientes'
+    },
+    {
+        to:'crear',
+        path:'/crear',
+        Component: AgregarTarea,
+        name:'Agregar una tarea'
     }
 ]

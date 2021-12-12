@@ -1,17 +1,16 @@
-import { Footer } from "../shared/Footer"
-import { SideNav } from "../shared/SideNav"
 import { UsersProvider } from "./context/UsersProvider"
-import './styles/styles.css'
 import { routes } from './routes/routes';
 import { Route, Routes } from "react-router-dom";
+import { MainLayout } from "../main-layout/MainLayout";
+import { TareaProvider } from "../tareas/context/TareaProvider";
+import { AuthProvider } from "../auth/context/AuthProvider";
 
 export const Users = () => {
     return (
-        <UsersProvider>
-            <div className="users__main__container">
-                <SideNav/>
-                <div className="main">
-                    <div className="component_content">
+        <AuthProvider>
+            <TareaProvider>
+                <UsersProvider>
+                    <MainLayout>
                         <Routes>
                             {
                                 routes.map( ({path,Component}) => (
@@ -19,13 +18,10 @@ export const Users = () => {
                                 ))
                             }
                         </Routes>
-                    </div>
-                    <div className="footer">
-                        <Footer/>
-                    </div>
-                </div>
-            </div>
-        </UsersProvider>
+                    </MainLayout>       
+                </UsersProvider>
+            </TareaProvider>
+        </AuthProvider>
     )
 }
 export default Users

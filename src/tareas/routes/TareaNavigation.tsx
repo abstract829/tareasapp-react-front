@@ -9,7 +9,8 @@ export const TareaNavigation = () => {
                     {
                         routes.map( ({to,name}) => (
                             <li key={to} className="li-tarea_nav">
-                                <NavLink to={to}>{name}</NavLink>
+                                <NavLink className="a-navlink"
+                                        to={to}>{name}</NavLink>
                             </li>
                         ))
                     }

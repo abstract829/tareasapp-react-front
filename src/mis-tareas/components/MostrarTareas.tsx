@@ -1,36 +1,27 @@
 import { useContext } from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { AuthContext } from '../../auth/context/AuthContext';
-import { useTraerTarea } from '../hooks/useTraerTareas';
 import './styles/styles.css'
+import { useGetUserTarea } from '../../users/hooks/useGetUserTarea';
+import { useTareas } from '../../tareas/hooks/useTareas';
 
 export const MostrarTareas = () => {
-    const {user} = useContext(AuthContext)
-
-    const {misTareas} = useTraerTarea()
-
-    //CREAR CONTEXT QUE TRAIGA TODAS LAS ID DE LAS TAREAS DE ESTE USUARIO
-    //MOSTRAR ESAS TAREAS ATRAVES DEL TAREAPROVIDER
+    const {logedUser} = useContext(AuthContext)
+    const {tareas} = useGetUserTarea({id:logedUser.id})
+    const {completarTarea} = useTareas()
     return (
         <div>
             {
-                user ?
-                (
-                    <div>
-                        <h3>{user.id}</h3>
-                        <h3>{user.name}</h3>
-                        <h3>{user.email}</h3>
-                    </div>
-                )
-                : ''
+                logedUser ? <h1>{logedUser.name}</h1> : ''
             }
             {
-                misTareas ?
-                misTareas.map( t => (
+                tareas ?
+                tareas.map( t => (
                     <Card key={t.id} className="tarea-item">
                         <Card.Body>
                             <Card.Title>{t.title}</Card.Title>
                             <Card.Text>{t.desc}</Card.Text>
+                            <Button onClick={() => completarTarea(t)}>Marcar completada</Button>
                         </Card.Body>
                     </Card>
                 ))

@@ -1,22 +1,28 @@
 .sidenav{
     height: 100vh;
-    width: 250px;
+    width: 300px;
     border-right: 0.5px solid black;
     padding:20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #34568B;
+    color: white;
+}
+img{
+    width: 200px;
 }
 .routes{
     margin-top:30px;
 }
-a{
+.routes a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 18px;
 }
-li{
+.routes li{
     list-style: none;
+    color: white;
 }
 footer{
     border-top: 0.5px solid black;
@@ -25,4 +31,10 @@ footer{
     justify-items: center;
     padding: 15px;
     font-size: 14px;
+    height: 5vh;
+    background: #34568B;
+    color: white;
+}
+.logout{
+    cursor:pointer;
 }

@@ -1,5 +1,5 @@
 import { MostrarDatos } from '../components/MostrarDatos'
-
+import '../styles/styles.css'
 export const Perfil = () => {
     return (
         <div>

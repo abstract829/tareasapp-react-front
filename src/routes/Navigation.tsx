@@ -9,10 +9,11 @@ export const Navigation = () => {
                 <Routes>
                     {
                         routes.map(({path, Component}) => (
-                            <Route key={path} path={path} element={<Component></Component>}/>
+                            <Route key={path} path={path} element={<Component></Component> }/>
                         ))
+                        
                     }
-                    <Route path='/*' element={<Navigate to='/tareas/' replace/>}/>
+                    <Route path='/*' element={<Navigate to='/auth/' replace/>}/>
 
                 </Routes>
             </BrowserRouter>

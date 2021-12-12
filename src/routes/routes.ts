@@ -11,6 +11,7 @@ interface Route{
 
 const Tareas = lazy( () => import('../tareas/Tareas'))
 const Users = lazy ( () => import('../users/Users'))
+const Auth = lazy ( () => import('../auth/Auth'))
 
 export const routes : Route[] = [
     {
@@ -36,5 +37,11 @@ export const routes : Route[] = [
         path:'/mi-perfil',
         Component: MiPerfil,
         name: 'Mi perfil'
+    },
+    {
+        to:'/auth/',
+        path:'/auth/*',
+        Component: Auth,
+        name: 'Auth'
     }
 ]

@@ -1,3 +1,9 @@
 .tarea-item{
     margin-bottom: 20px;
 }
+.btn-pag{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
+    place-content: center;
+}

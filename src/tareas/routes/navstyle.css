@@ -1,11 +1,32 @@
+
+
 .ul-tarea_nav{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.li-tarea_nav{
-    margin-right: 15px;
+li,a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 18px;
+}
+.active{
+    font-weight: 500;
+    background: #34568B;
+    color: white;
+}
+.a-navlink{
+    padding: 10px;
     border: 1px solid black;
+    margin-right: 15px;
     border-radius: 2px;
-    padding: 5px;
+}
+a:hover{
+    color: white;
+}
+
+.li-tarea_nav{
+    margin-bottom: 10px;
 }

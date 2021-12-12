@@ -1,32 +1,28 @@
 import { useParams } from "react-router-dom"
-import { useContext, useEffect, useState } from 'react';
-import { UsersContext } from '../context/UsersContext';
-import { User } from '../interfaces/interfaces';
+import { useGetUserTarea } from '../hooks/useGetUserTarea';
+import { Card } from "react-bootstrap";
 
 export const TareasUser = () => {
     const {id} = useParams()
-    const {users} = useContext(UsersContext)
-    const [user, setUser] = useState({} as User)
-    
-    useEffect(() => {
-        const getUser = () => {
-            setUser(users.find(u => u.id === id)!)
-        }
-        getUser()
-    }, [id,users])
+    const {user,tareas} = useGetUserTarea({id})
     return (
         <div>
-            <h1>Tareas del user: {id} </h1>
             {
                 user ?
-                (
-                    <div>
-                        <div>{user.id}</div>
-                        <div>{user.name}</div>
-                        <div>{user.email}</div>
-                    </div>
-                )
+                <h2>Tareas de {user.name}</h2>
                 : ''
+            }
+            {
+                tareas.length > 0 ?
+                (tareas.map(t => (
+                    <Card key={t.id} className="tarea-item">
+                        <Card.Body>
+                            <Card.Title>{t.title}</Card.Title>
+                            <Card.Text>{t.desc}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                )))
+                : (<h3>El usuario no tiene tareas asignadas</h3>)
             }
         </div>
     )
